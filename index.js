@@ -39,6 +39,23 @@ app.post("/herois", function (req, res){
   res.send("Item inserido com sucesso!");
 });
 
+// Endpoint Update - [PUT] /herois/:id
+app.put("/herois/:id", function (req, res) {
+  console.log(herois);
+
+  const id = req.params.id;
+
+  const item = req.body.nome;
+
+  herois[id - 1] = item;
+
+  res.send("Item atualizado com sucesso!");
+
+  console.log(herois);
+});
+
+
+
 app.listen(3000, () =>
   console.log("Servidor rodando em http://localhost:3000")
 );
